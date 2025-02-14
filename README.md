@@ -1,9 +1,8 @@
 ## Hi there 👋
 
 <!--
-**konon4/konon4** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
+# My Gitlab
+![Btw my experience from GitLab](https://github.com/user-attachments/assets/037f5dec-423f-48a2-94ed-ebbbd95bd252)
 
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
