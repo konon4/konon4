@@ -26,7 +26,7 @@ battery boards, carbon-fibre parts and a dispenser for a robotic production line
 
 | | |
 |---|---|
-| **LLM inference** | vLLM serving a 35B MoE model with TP=2 on two RTX 3090: power study per card, decode vs prefill bottlenecks, 2.1x decode with MTP speculative decoding. |
+| **LLM inference** | vLLM serving a 35B MoE model with TP=2 on two RTX 3090: power study per card, decode vs prefill bottlenecks; 2.1x decode with MTP speculative decoding on the same pair (Qwen3.8-Flash-Next). |
 | **Open source** | [scoperoute](https://github.com/Botable-dev/scoperoute), [codestrain-cli](https://github.com/codestrain/codestrain-cli), [gaze-clustering](https://github.com/konon4/gaze-clustering) |
 | **Teaching** | Master's thesis supervisor at ITMO University, AI Talent Hub: 37 theses defended in 2024-2026 (8, 14 and 15); 31 theses evaluated on defence committees in June 2026. Lead expert of the "Agentic Workflow" block, karpov.courses x ITMO: 12 webinars. |
 | **Patents** | Co-inventor, [US 10,994,299](https://patents.google.com/patent/US10994299B2/en): two-component adhesive dispenser with a mixing unit replacement system for a robotic line (TRA Robotics, later Arrival, 2018). Inventor, [RU 2,780,879](https://patents.google.com/patent/RU2780879C1/en): electric scooter (2022). |
@@ -37,7 +37,7 @@ battery boards, carbon-fibre parts and a dispenser for a robotic production line
 
 | Area | What it is |
 |---|---|
-| **LLM inference** | vLLM serving Qwen3.6-35B-A3B (MoE, AWQ) with tensor parallelism on two NVIDIA RTX 3090: 262K context, chunked prefill, prefix caching. Throughput and power profiled per card; speculative decoding with MTP. |
+| **LLM inference** | vLLM serving Qwen3.6-35B-A3B (MoE, AWQ) with tensor parallelism on two NVIDIA RTX 3090: 262K context, chunked prefill, prefix caching. Throughput and power profiled per card. Speculative decoding with MTP measured separately on Qwen3.8-Flash-Next on the same pair. |
 | **Speech-to-text** | ASR with pyannote diarization, glossary-based term correction, streaming over WebSocket, transcript analysis by an LLM on vLLM. Diarization benchmarked against NVIDIA NeMo (Sortformer). |
 | **Agents** | [Botable.dev](https://botable.dev): an agent builder that writes a Telegram agent as plain Python from a text description. Exported agents run on open models via vLLM in the acceptance test. Completed the AI'Preneurs 2025 accelerator at Astana Hub. |
 | **LLM evaluation** | Reference sets, release gates, pre-registered comparisons, LLM judges from another model family. LLM classification and evaluation in client production since 2024. |
@@ -51,9 +51,9 @@ Each number comes from a run I designed and executed, on the hardware named in t
 | Prefill vs power cap | Qwen3.6-35B-A3B, TP=2 on 2x RTX 3090, 132K-token prompt | 3.3K tok/s at 200 W per card, 4.2K tok/s at 250 W; 300 W adds 4-5 % (10 % at 200K tokens) |
 | Decode vs power cap | same | decode time flat from 250 to 300 W, consistent with a memory-bandwidth-bound decode |
 | Sustained dual-GPU load | same, 200 W and 250 W per card | 5.1M prefill tokens, no Xid errors |
-| Speculative decoding (MTP) | same pair | 2.1x decode speed at temperature 0; 1.6-1.7x at 0.6-1.0 |
+| Speculative decoding (MTP) | Qwen3.8-Flash-Next W4A16 on the same 2x RTX 3090, vLLM-based runtime, 3 draft tokens | 2.1x decode speed at temperature 0; 1.6-1.7x at 0.6-1.0 |
 | Diarization engine choice | NVIDIA NeMo Sortformer vs pyannote, 76 real recordings, DER | pyannote kept as default for long multi-speaker recordings |
-| ASR model choice | 5 ASR variants, Russian reference recording, WER + keyword errors | chosen model: 1.5 pp worse WER than the closest variant, 4.7 pp more keywords kept, English terms stay in Latin script |
+| ASR variant choice | 4 decoding variants of an open Russian ASR model, 12 recordings (12.9 h), WER + keyword survival | chosen variant: 1.5 pp worse WER than the closest one, 4.7 pp more keywords kept, English terms stay in Latin script |
 | ASR throughput | one RTX 3060 | 4 h 51 min of audio in 18 min 24 s |
 | Document OCR | 387 Russian pages, median CER | 0.7B document parser on one RTX 3060: 0.060, a 27B model: 0.061, a 35B MoE general model: 0.130 |
 
