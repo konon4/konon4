@@ -1,17 +1,17 @@
 <h1 align="center">Ivan Kononov</h1>
 
 <p align="center">
-  <b>Engineer who ships hardware and AI</b><br>
-  LLM inference on NVIDIA GPUs &middot; speech-to-text &middot; LLM evaluation &middot; embedded, composites, additive manufacturing<br>
+  <b>AI Solutions Architect: LLM inference, evaluation and speech AI on NVIDIA GPUs</b><br>
+  vLLM &middot; LLM evaluation &middot; speech-to-text &middot; agents &middot; hardware R&amp;D background, US and RU patents<br>
   Astana, Kazakhstan
 </p>
 
 <p align="center">
-  <a href="https://patents.google.com/patent/US10994299B2/en"><img alt="US Patent 10,994,299" src="https://img.shields.io/badge/US%20patent-10%2C994%2C299-0B5394?style=flat-square"></a>
-  <a href="https://patents.google.com/patent/RU2780879C1/en"><img alt="RU Patent 2,780,879" src="https://img.shields.io/badge/RU%20patent-2%2C780%2C879-0B5394?style=flat-square"></a>
   <img alt="vLLM TP=2" src="https://img.shields.io/badge/vLLM-TP%3D2%20on%202x%20RTX%203090-76B900?style=flat-square&logo=nvidia&logoColor=white">
   <img alt="ITMO thesis supervisor" src="https://img.shields.io/badge/ITMO-master's%20thesis%20supervisor-1946BA?style=flat-square">
   <img alt="Astana Hub resident" src="https://img.shields.io/badge/Astana%20Hub-resident%20since%202025-555?style=flat-square">
+  <a href="https://patents.google.com/patent/US10994299B2/en"><img alt="US Patent 10,994,299" src="https://img.shields.io/badge/US%20patent-10%2C994%2C299-0B5394?style=flat-square"></a>
+  <a href="https://patents.google.com/patent/RU2780879C1/en"><img alt="RU Patent 2,780,879" src="https://img.shields.io/badge/RU%20patent-2%2C780%2C879-0B5394?style=flat-square"></a>
 </p>
 
 <p align="center">
@@ -20,38 +20,16 @@
   <a href="mailto:kononoff4@gmail.com"><img alt="Email" src="https://img.shields.io/badge/email-kononoff4%40gmail.com-informational?style=flat-square&logo=gmail&logoColor=white"></a>
 </p>
 
-I started in mechanical engineering and additive manufacturing, built motor controllers, battery
-boards and carbon-fibre parts for vehicle prototypes, and co-invented a dispenser for a robotic
-production line. Today I serve and measure LLM and speech workloads on self-hosted NVIDIA GPUs and
-take client AI systems from a brief to production. Same habit in both: measure, then decide.
+I take LLM systems from a brief to production and keep their quality measurable, and I serve and measure
+LLM and speech workloads on self-hosted NVIDIA GPUs. Before AI I spent years in hardware R&D: motor controllers,
+battery boards, carbon-fibre parts and a dispenser for a robotic production line. Same habit in both: measure, then decide.
 
 | | |
 |---|---|
+| **LLM inference** | vLLM serving a 35B MoE model with TP=2 on two RTX 3090: power study per card, decode vs prefill bottlenecks, 2.1x decode with MTP speculative decoding. |
+| **Open source** | [scoperoute](https://github.com/Botable-dev/scoperoute), [codestrain-cli](https://github.com/codestrain/codestrain-cli), [gaze-clustering](https://github.com/konon4/gaze-clustering) |
+| **Teaching** | Master's thesis supervisor at ITMO University, AI Talent Hub: 37 theses defended in 2024-2026 (8, 14 and 15); 31 theses evaluated on defence committees in June 2026. Lead expert of the "Agentic Workflow" block, karpov.courses x ITMO: 12 webinars. |
 | **Patents** | Co-inventor, [US 10,994,299](https://patents.google.com/patent/US10994299B2/en): two-component adhesive dispenser with a mixing unit replacement system for a robotic line (TRA Robotics, later Arrival, 2018). Inventor, [RU 2,780,879](https://patents.google.com/patent/RU2780879C1/en): electric scooter (2022). |
-| **LLM inference** | vLLM serving a 35B MoE model with TP=2 on two RTX 3090: power study per card, 5.1M prefill tokens of sustained load without Xid errors, 2.1x decode with MTP speculative decoding. |
-| **Teaching** | Master's thesis supervisor at ITMO University, AI Talent Hub: 8 theses in 2024, 14 in 2025, 15 in 2026; 31 theses evaluated on defence committees in June 2026. Lead expert of the "Agentic Workflow" block, karpov.courses x ITMO: 12 webinars. |
-| **Hardware on show** | Prototypes presented at TechFest IIT Bombay 2017, IFA NEXT Berlin 2018 and TechCrunch Disrupt 2023. |
-
----
-
-## Hardware I have built
-
-```mermaid
-flowchart LR
-    A["Mechanical engineering<br/>and additive manufacturing<br/>SPbPU, PolyU Hong Kong"] --> B["Embedded and power electronics<br/>BLDC, BMS, PCB<br/>kScooters, Polytech Solar"]
-    B --> C["Robotics R&D<br/>TRA Robotics / Arrival<br/>US patent"]
-    C --> D["Machine learning<br/>CV on video, industrial analytics"]
-    D --> E["LLM inference and speech<br/>vLLM, TP=2, ASR"]
-```
-
-| Project | What I did |
-|---|---|
-| **kScooters**, lightweight electric scooter, prototypes | BLDC motor-controller firmware on STM32 (ported from STM32F103 to STM32G0). PCBs up to 4 layers in Altium Designer and Eagle, including a Bluetooth 5 board with an impedance-controlled antenna trace. A 6S battery management board with cell balancing, charge and discharge current protection and overheat shutdown. Carbon-fibre parts and the tooling to make them. Protected by [RU invention patent 2,780,879](https://patents.google.com/patent/RU2780879C1/en). Shown at IFA NEXT Berlin 2018 and TechCrunch Disrupt 2023. |
-| **TRA Robotics (later Arrival)**, R&D engineer, 2018 | Co-inventor of [US patent 10,994,299](https://patents.google.com/patent/US10994299B2/en), an adhesive dispenser with a replaceable mixing unit for a robotic line. Prototyped a logistics cell element (SolidWorks, 3D printing); assembled and configured a 300x300 mm FDM printer. |
-| **Polytech Solar Team**, SPbPU, 2017 | Engineer, then chief electrical engineer on Russia's first carbon-fibre solar car: battery pack configuration, a load test stand for the EMRAX 188 motor, technical documents for World Solar Challenge and American Solar Challenge. |
-| **Hong Kong Polytechnic University**, research internship, 2018 | 3D printing with high-performance polymers and metals (Stratasys, SLM Solutions); thin-sheet metal forming with 3D-printed polymer tooling, finite element modelling. |
-| **Sticky Lens**, founder, 2015-2017 | Sticky macro lens for smartphones, launched through crowdfunding on BoomStarter; a small desktop robot for batch production. Exhibited at TechFest IIT Bombay 2017. |
-| **Carbon-fibre filament winder** | A 4-axis winding machine: parametric [G-code generator](https://github.com/konon4/carbon_winder_gcode_generator) and [Marlin firmware](https://github.com/konon4/Marlin_carbon_winder). |
 
 ---
 
@@ -104,11 +82,21 @@ flowchart LR
 
 ---
 
+## Open source
+
+| Repository | What it does |
+|---|---|
+| [scoperoute](https://github.com/Botable-dev/scoperoute) | Shows which components of a repository Claude Fable 5 will actually build and where it silently falls back to Opus; prices the run as a share of the Claude plan and leaves an architecture review in the repo. By HubLab.ai. |
+| [codestrain-cli](https://github.com/codestrain/codestrain-cli) | Reads Claude Code session logs and reports cost, tokens and a per-project breakdown from the terminal. Zero dependencies, Python 3.9+. |
+| [gaze-clustering](https://github.com/konon4/gaze-clustering) | DBSCAN clustering of per-frame gaze vectors with an off-screen score, prototyped for exam-integrity monitoring; synthetic example data. |
+
+---
+
 ## Teaching and community
 
 | Where | Role |
 |---|---|
-| ITMO University, AI Talent Hub | Practice Lecturer and master's thesis supervisor (2024; 2025 - present): 8 theses in 2024, 14 in 2025, 15 in 2026. Defence committees, June 2026: 31 theses. Expert at Virtual DemoDay 2024. |
+| ITMO University, AI Talent Hub | Practice Lecturer and master's thesis supervisor (2024; 2025 - present): 37 theses defended in 2024-2026 (8, 14 and 15). Defence committees, June 2026: 31 theses. Expert at Virtual DemoDay 2024. |
 | karpov.courses x ITMO professional programme | Lead expert of the "Agentic Workflow" block: 12 webinars, autumn 2026 |
 | Astana Hub | HubLab LLP, resident since May 2025. Lectured for AI'Preneurs accelerator participants. |
 | Press | Quoted on AI agents in [Forbes Kazakhstan](https://forbes.kz/articles/ii-v-marketinge-2026-kak-poisk-bez-klikov-menyaet-digital-rynok-kazahstana-cb7282), June 2026 |
@@ -122,6 +110,32 @@ flowchart LR
 - Second-degree diploma for research, SPbPU Science Week.
 
 </details>
+
+---
+
+## Earlier hardware R&D
+
+<details>
+<summary><b>Path from hardware to AI</b></summary>
+
+```mermaid
+flowchart LR
+    A["Mechanical engineering<br/>and additive manufacturing<br/>SPbPU, PolyU Hong Kong"] --> B["Embedded and power electronics<br/>BLDC, BMS, PCB<br/>kScooters, Polytech Solar"]
+    B --> C["Robotics R&D<br/>TRA Robotics / Arrival<br/>US patent"]
+    C --> D["Machine learning<br/>CV on video, industrial analytics"]
+    D --> E["LLM inference and speech<br/>vLLM, TP=2, ASR"]
+```
+
+</details>
+
+| Project | What I did |
+|---|---|
+| **kScooters**, lightweight electric scooter, prototypes | BLDC motor-controller firmware on STM32 (ported from STM32F103 to STM32G0). PCBs up to 4 layers in Altium Designer and Eagle, including a Bluetooth 5 board with an impedance-controlled antenna trace. A 6S battery management board with cell balancing, charge and discharge current protection and overheat shutdown. Carbon-fibre parts and the tooling to make them. Protected by [RU invention patent 2,780,879](https://patents.google.com/patent/RU2780879C1/en). Shown at IFA NEXT Berlin 2018 and TechCrunch Disrupt 2023. |
+| **TRA Robotics (later Arrival)**, R&D engineer, 2018 | Co-inventor of [US patent 10,994,299](https://patents.google.com/patent/US10994299B2/en), an adhesive dispenser with a replaceable mixing unit for a robotic line. Prototyped a logistics cell element (SolidWorks, 3D printing); assembled and configured a 300x300 mm FDM printer. |
+| **Polytech Solar Team**, SPbPU, 2017 | Engineer, then chief electrical engineer on Russia's first carbon-fibre solar car: battery pack configuration, a load test stand for the EMRAX 188 motor, technical documents for World Solar Challenge and American Solar Challenge. |
+| **Hong Kong Polytechnic University**, research internship, 2018 | 3D printing with high-performance polymers and metals (Stratasys, SLM Solutions); thin-sheet metal forming with 3D-printed polymer tooling, finite element modelling. |
+| **Sticky Lens**, founder, 2015-2017 | Sticky macro lens for smartphones, launched through crowdfunding on BoomStarter; a small desktop robot for batch production. Exhibited at TechFest IIT Bombay 2017. |
+| **Carbon-fibre filament winder** | A 4-axis winding machine: parametric [G-code generator](https://github.com/konon4/carbon_winder_gcode_generator) and [Marlin firmware](https://github.com/konon4/Marlin_carbon_winder). |
 
 ---
 
