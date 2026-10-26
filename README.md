@@ -27,7 +27,7 @@ battery boards, carbon-fibre parts and a dispenser for a robotic production line
 | | |
 |---|---|
 | **LLM inference** | vLLM serving a 35B MoE model with TP=2 on two RTX 3090: power study per card, decode vs prefill bottlenecks; 2.1x decode with MTP speculative decoding on the same pair (Qwen3.8-Flash-Next). |
-| **Open source** | [scoperoute](https://github.com/Botable-dev/scoperoute), [codestrain-cli](https://github.com/codestrain/codestrain-cli), [gaze-clustering](https://github.com/konon4/gaze-clustering) |
+| **Open source** | [vllm-rtx3090-power-study](https://github.com/konon4/vllm-rtx3090-power-study), [asr-diarization-benchmark](https://github.com/konon4/asr-diarization-benchmark), [scoperoute](https://github.com/Botable-dev/scoperoute), [codestrain-cli](https://github.com/codestrain/codestrain-cli), [gaze-clustering](https://github.com/konon4/gaze-clustering) |
 | **Teaching** | Master's thesis supervisor at ITMO University, AI Talent Hub: 37 theses defended in 2024-2026 (8, 14 and 15); 31 theses evaluated on defence committees in June 2026. Lead expert of the "Agentic Workflow" block, karpov.courses x ITMO: 12 webinars. |
 | **Patents** | Co-inventor, [US 10,994,299](https://patents.google.com/patent/US10994299B2/en): two-component adhesive dispenser with a mixing unit replacement system for a robotic line (TRA Robotics, later Arrival, 2018). Inventor, [RU 2,780,879](https://patents.google.com/patent/RU2780879C1/en): electric scooter (2022). |
 
@@ -43,6 +43,8 @@ battery boards, carbon-fibre parts and a dispenser for a robotic production line
 | **LLM evaluation** | Reference sets, release gates, pre-registered comparisons, LLM judges from another model family. LLM classification and evaluation in client production since 2024. |
 
 ### Selected measurements
+
+Method, scripts and result tables: [vllm-rtx3090-power-study](https://github.com/konon4/vllm-rtx3090-power-study) and [asr-diarization-benchmark](https://github.com/konon4/asr-diarization-benchmark).
 
 Each number comes from a run I designed and executed, on the hardware named in the row.
 
@@ -86,6 +88,8 @@ flowchart LR
 
 | Repository | What it does |
 |---|---|
+| [vllm-rtx3090-power-study](https://github.com/konon4/vllm-rtx3090-power-study) | Power cap vs prefill and decode for a 35B MoE on vLLM with TP=2 on two RTX 3090: method, launch and benchmark scripts, results. |
+| [asr-diarization-benchmark](https://github.com/konon4/asr-diarization-benchmark) | Scoring harness for Russian ASR (WER, keyword survival per occurrence) and diarization (DER, pyannote vs NVIDIA NeMo Sortformer) with paired statistics; synthetic sample data. |
 | [scoperoute](https://github.com/Botable-dev/scoperoute) | Shows which components of a repository Claude Fable 5 will actually build and where it silently falls back to Opus; prices the run as a share of the Claude plan and leaves an architecture review in the repo. By HubLab.ai. |
 | [codestrain-cli](https://github.com/codestrain/codestrain-cli) | Reads Claude Code session logs and reports cost, tokens and a per-project breakdown from the terminal. Zero dependencies, Python 3.9+. |
 | [gaze-clustering](https://github.com/konon4/gaze-clustering) | DBSCAN clustering of per-frame gaze vectors with an off-screen score, prototyped for exam-integrity monitoring; synthetic example data. |
